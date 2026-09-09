@@ -4,8 +4,10 @@ import pandas as pd
 
 from .parsers import get_label, parse_filename
 
-DATA_RAW = Path("../data/raw")
-METADATA_FILE = Path("../data/processed/metadata.csv")
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+DATA_RAW = PROJECT_ROOT / "data/raw"
+METADATA_FILE = PROJECT_ROOT / "data/processed/metadata.csv"
 
 
 def build_metadata(data_dir=DATA_RAW, metadata_file=METADATA_FILE, refresh=False):
