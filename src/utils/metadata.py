@@ -2,10 +2,10 @@ from pathlib import Path
 
 import pandas as pd
 
-from .parsers import get_label, parse_filename
+# from .parsers import get_label, parse_filename
 
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 DATA_RAW = PROJECT_ROOT / "data/raw"
 METADATA_FILE = PROJECT_ROOT / "data/processed/metadata.csv"
 
