@@ -30,3 +30,9 @@ def parse_filename(path):
 def get_label(bearing_id):
     """Return 'healthy' or 'damaged' for a bearing id."""
     return "healthy" if bearing_id in HEALTHY_BEARINGS else "damaged"
+
+
+def condition_key(info):
+    """Encode speed/torque/force into the dataset condition code, e.g. 'N15_M07_F10'."""
+    speed, torque, force = info["speed_rpm"], info["torque_Nm"], info["force_N"]
+    return f"N{int(speed / 100):02d}_M{int(torque * 10):02d}_F{int(force / 100):02d}"
